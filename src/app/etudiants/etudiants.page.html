@@ -1,0 +1,108 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Etudiant</ion-title>
+
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="os">
+                    <h1>Liste des Etudiants</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Nom</th>
+                            <th>Class</th>
+                            <th>Payment</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="form-group">
+                            <td> <input [(ngModel)]="myEtudiant.id" class="form-control"> </td>
+                            <td> <input [(ngModel)]="myEtudiant.nom" class="form-control"> </td>
+                            <td> <input [(ngModel)]="myEtudiant.class" class="form-control"> </td>
+                            <td><label class="form-check-label">
+                              <input [(ngModel)]="myEtudiant.completed" type="checkbox" class="form-check-input">
+                                  payment
+                              </label> </td>
+                        </tr>
+                </table>
+                <div class="col-lg-6">
+                    <table class="table">
+
+                        <tr>
+                            <th><button (click)="persistEtudiant()" class="btn btn-outline-secondary btn-lg">
+                                    <i class="fa fa-send"></i>Ajout
+                                </button></th>
+                            <th> </th>
+                            <th> </th>
+                            <th><button (click)="updateEtudiant()" class="btn btn-outline-secondary btn-lg">
+                                    <i class="fa fa-refresh"></i>Modifier
+                                </button></th>
+                        </tr>
+
+                    </table>
+
+
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 mx-auto">
+                <div class="container">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nom</th>
+                                <th>Class</th>
+                                <th>Payment</th>
+                                <th>Modifier</th>
+                                <th>Supprimer</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let etudiant of etudiants">
+                                <td>{{ etudiant.id }}</td>
+                                <td>{{ etudiant.nom }} </td>
+                                <td> {{ etudiant.class }} </td>
+                                <td> <span (click)="toggleCompleted(etudiant)" [ngClass]="{
+                                      'badge-info': etudiant.completed,
+                                      'badge-danger': !etudiant.completed
+                                       }" class="badge badge-danger badge-pill">
+                                    <i class="fa" [ngClass]="{
+                                        'fa-toggle-on': etudiant.completed,
+                                        'fa-toggle-off': !etudiant.completed
+                                          }">
+                                      </i>
+                                 </span></td>
+                                <td> <button (click)="editEtudiant(etudiant)" class="btn btn-secondary btn-sm">
+                                  <i class="fa fa-pencil">
+                              </i></button></td>
+                                <td><button (click)="deleteEtudiant(etudiant.id)" class="btn btn-sm btn-dark">
+                                <i class="fa fa-trash"></i>
+                            </button></td>
+                            </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ion-content>

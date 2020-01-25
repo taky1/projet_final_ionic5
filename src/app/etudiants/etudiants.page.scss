@@ -1,0 +1,25 @@
+ion-content {
+    --ion-background-color: linear-gradient(#403A3E, #BE5869);
+}
+
+ion-toolbar {
+    --ion-background-color: #403A3E;
+    color: #FFFFFF;
+}
+
+ion-item {
+    --ion-background-color: transparent!important;
+}
+
+.padding {
+    padding: 10%;
+}
+
+.add-button {
+    --background: #383a3e;
+    position: absolute;
+    bottom: 5px;
+    width: 96%;
+    --color: #ffffff;
+    margin-left: 2%;
+}

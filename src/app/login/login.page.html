@@ -1,0 +1,27 @@
+<ion-content>
+    <div class="padding">
+        <div class="logo">
+
+
+
+            <ion-icon color="light" name="logo-ionic"></ion-icon>
+        </div>
+        <form #f="ngForm" (ngSubmit)="onLogin(f.value)">
+            <ion-item>
+                <ion-label color="light">User: </ion-label>
+                <ion-input color="light" type="text" name="user" ngModel placeholder="user"></ion-input>
+            </ion-item>
+
+            <ion-item>
+                <ion-label color="light">Password: </ion-label>
+                <ion-input color="light" type="password" name="password" ngModel placeholder="Password"></ion-input>
+            </ion-item>
+            <ion-item lines="none">
+                <ion-button color="light" slot="end" fill="clear">Mot de passe oublié ?</ion-button>
+            </ion-item>
+            <button type="submit" expand="block" shape="round" class="btn btn-outline-light btn-lg btn-block">
+                Connexion
+            </button>
+        </form>
+    </div>
+</ion-content>

@@ -14,6 +14,22 @@ const routes: Routes = [
   {
     path: 'list',
     loadChildren: () => import('./list/list.module').then(m => m.ListPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'calculatrice',
+    loadChildren: () => import('./calculatrice/calculatrice.module').then( m => m.CalculatricePageModule)
+  },
+  {
+    path: 'etudiants',
+    loadChildren: () => import('./etudiants/etudiants.module').then( m => m.EtudiantsPageModule)
+  },
+  {
+    path: 'camera',
+    loadChildren: () => import('./camera/camera.module').then( m => m.CameraPageModule)
   }
 ];
 
